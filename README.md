@@ -83,5 +83,7 @@ The following modules will be implemented as part of the complete pipeline:
 
 ## 4. Author
 Developed by [Ben Gregory John]
+
 BTech CSE | 2nd Year
+
 GitHub: [https://github.com/BenGJ10/]
