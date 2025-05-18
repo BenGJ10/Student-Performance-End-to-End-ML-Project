@@ -1,0 +1,102 @@
+/* Google Fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #b269e6, #7324ab);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Form Box */
+.form-box {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Main Title */
+.main-title {
+    text-align: center;
+    color: #6a0dad;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Labels & Inputs */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.input-group select,
+.input-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+    border-color: #a259ff;
+}
+
+/* Button Styling */
+.input-group.center {
+    text-align: center;
+}
+
+button {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #8a2be2;
+}
+
+/* Prediction Result */
+.prediction-box {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #f6edff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #b886ff;
+}
+
+.prediction-box h2 {
+    color: #6a0dad;
+    font-weight: 600;
+}
+
+.prediction-box span {
+    color: #4b0082;
+    font-weight: bold;
+}
