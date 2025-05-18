@@ -26,7 +26,7 @@ Performed a detailed EDA in `notebook/data_analysis.ipynb`, including:
   - Data flow checkpoints
   - Helpful for debugging or pipeline monitoring
 
-> Refer to: `src/logger.py`
+> 📂 `src/logger.py`
 
 ---
 
@@ -36,7 +36,7 @@ Performed a detailed EDA in `notebook/data_analysis.ipynb`, including:
 - Catches and formats exceptions with traceback and error context
 - Used across the ingestion module for better fault tolerance
 
-> Refer to: `src/exception.py`
+> 📂 `src/exception.py`
 
 ---
 
@@ -50,39 +50,96 @@ Performed a detailed EDA in `notebook/data_analysis.ipynb`, including:
   - `artifacts/test.csv`
 - Modular and reusable class-based design using `@dataclass` for configuration
 
-> Refer to: `src/components/data_ingestion.py`
+> 📂 `src/components/data_ingestion.py`
 
 ---
 
+### ✅ Data Transformation Module
+
+- Handles missing values (if any)
+- Encodes categorical features
+- Scales numerical columns using `StandardScaler`
+- Saves the transformation pipeline (`preprocessor.pkl`) for reuse in prediction
+
+> 📂 `src/components/data_transformation.py`
+
+---
+
+### ✅ Model Training & Evaluation
+
+- Trains multiple models (e.g., Random Forest, Linear Regression)
+- Evaluates on test data using R², MAE, MSE
+- Selects best-performing model and saves it as `model.pkl`
+- Modular training logic with performance logging
+
+> 📂 `src/components/model_trainer.py`
+
+---
+
+### ✅ Predict Pipeline
+
+- Uses saved model and transformer (`model.pkl`, `preprocessor.pkl`)
+- Loads input features and outputs prediction
+- Designed to work with both backend services and web inputs
+
+> 📂 `src/pipelines/predict_pipeline.py`
+
+---
+
+### ✅ Frontend (Basic HTML/CSS)
+
+- A minimal HTML/CSS form to collect user inputs (features)
+- Sends input data to the backend for prediction
+- Displays the predicted performance score/output to the user
+
+> 📂 `templates/index.html`  
+> 📂 `static/style.css`
+
+--- 
+
+### ✅ Dockerization
+
+- Fully containerized using a custom `Dockerfile`
+- Deployed on DockerHub: [https://hub.docker.com/repository/docker/bengj/stud-perf-proj/general]
+- Runs the app in a consistent environment using:
+
+```bash
+docker build -t student-perf-ml .
+docker run -p 5000:5000 student-perf-ml
+```
+
+
+> 📂 `Dockerfile`
+--- 
+
 ## 2. Technologies Used
+
 - Python 3.8+
 
-- Pandas
+- Pandas, NumPy
 
 - Scikit-learn
 
-- Logging
+- Logging & Exception Handling
 
 - Dataclasses
 
-- Custom Exception Handling
+- HTML & CSS (Frontend)
+
+- Docker
 
 ---
 
 ## 3. Next Steps
 
-The following modules will be implemented as part of the complete pipeline:
+1. Add CI/CD using GitHub Actions
 
-1. Data Transformation (handling missing values, encoding, scaling)
-
-2. Model Training and Evaluation
-
-3. Lot more to uncover
+2. Cloud Deployment (Render, Railway, or AWS)
 
 ---
 
 ## 4. Author
-Developed by [Ben Gregory John]
+Developed by Ben Gregory John
 
 BTech CSE | 2nd Year
 
